@@ -1,0 +1,286 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.6                      
+******************************************************************************
+>> Linked Thu Oct 30 17:29:51 2014
+
+OUTPUT FILE NAME:   <LCDBPV2.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000d79
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  RAM                   00000020   ffffffe0  00001290  ffffed50  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000020    00000020    000010f0   000010f0    r-x
+  00000020    00000020    0000105c   0000105c    r-x .text
+  0000107c    0000107c    00000094   00000094    r-- .const
+00001110    00001110    00000168   00000000    rw-
+  00001110    00001110    00000054   00000000    rw- .bss
+  00001164    00001164    00000014   00000000    rw- .data
+  00001178    00001178    00000100   00000000    rw- .stack
+00001278    00001278    00000038   00000038    r--
+  00001278    00001278    00000038   00000038    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    00000020    00000000     UNINITIALIZED
+
+.text      0    00000020    0000105c     
+                  00000020    000001c4     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289Init)
+                  000001e4    000001b2     LCDBP320x240x16_SSD1289.obj (.text:init0)
+                  00000396    00000130     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  000004c6    00000002     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289Flush)
+                  000004c8    00000124     lcdbpv2.obj (.text:main)
+                  000005ec    00000122     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289PixelDrawMultiple)
+                  0000070e    00000002     --HOLE-- [fill = 0]
+                  00000710    00000118     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  00000828    000000f0                   : sysctl.obj (.text:SysCtlClockSet)
+                  00000918    000000c8     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289RectFill)
+                  000009e0    000000c0     LCDBP320x240x16_SSD1289.obj (.text:WriteCommand)
+                  00000aa0    000000b0     LCDBP320x240x16_SSD1289.obj (.text:WriteData)
+                  00000b50    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00000bec    00000094                                   : auto_init.obj (.text)
+                  00000c80    0000005e                                   : copy_decompress_rle.obj (.text)
+                  00000cde    0000004e     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289LineDrawH)
+                  00000d2c    0000004c     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289LineDrawV)
+                  00000d78    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00000dc0    00000046     LCDBP320x240x16_SSD1289.obj (.text:initpower)
+                  00000e06    00000002     --HOLE-- [fill = 0]
+                  00000e08    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00000e4c    00000044                                   : exit.obj (.text)
+                  00000e90    0000003c     lcdbpv2.obj (.text:ClrScreen)
+                  00000ecc    0000003c     LCDBP320x240x16_SSD1289.obj (.text:init1)
+                  00000f08    0000003a     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289PixelDraw)
+                  00000f42    00000002     --HOLE-- [fill = 0]
+                  00000f44    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00000f78    0000002a                   : gpio.obj (.text:GPIODirModeSet)
+                  00000fa2    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.obj (.text)
+                  00000fc2    00000002     --HOLE-- [fill = 0]
+                  00000fc4    00000018                                   : args_main.obj (.text)
+                  00000fdc    00000016     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289ColorTranslate)
+                  00000ff2    00000014     LCDBP320x240x16_SSD1289.obj (.text:WriteDataSec)
+                  00001006    00000002     --HOLE-- [fill = 0]
+                  00001008    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  0000101c    00000012                                   : copy_zero_init.obj (.text:decompress:ZI)
+                  0000102e    0000000e     driverlib.lib : gpio.obj (.text:GPIOIntDisable)
+                  0000103c    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000104a    0000000c     driverlib.lib : gpio.obj (.text:GPIOIntEnable)
+                  00001056    00000002     --HOLE-- [fill = 0]
+                  00001058    0000000c     LCDBP320x240x16_SSD1289.obj (.text:disableINT)
+                  00001064    0000000c     LCDBP320x240x16_SSD1289.obj (.text:enableINT)
+                  00001070    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  00001076    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+
+.const     0    0000107c    00000094     
+                  0000107c    0000006c     driverlib.lib : sysctl.obj (.const:g_pui32Xtals)
+                  000010e8    00000028     LCDBP320x240x16_SSD1289.obj (.const:g_sLCDBP320x240x16_SSD1289)
+
+.bss       0    00001110    00000054     UNINITIALIZED
+                  00001110    0000002c     lcdbpv2.obj (.bss:sContext)
+                  0000113c    00000004     (.common:ulClockMS)
+                  00001140    00000008     (.common:midelay)
+                  00001148    00000008     (.common:midelayns)
+                  00001150    00000008     (.common:midelaynsr)
+                  00001158    00000008     (.common:sRect)
+                  00001160    00000004     (.common:ulClockMS3)
+
+.data      0    00001164    00000014     UNINITIALIZED
+                  00001164    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  0000116c    00000008                                   : exit.obj (.data)
+                  00001174    00000004                                   : stkdepth_vars.obj (.data)
+
+.stack     0    00001178    00000100     UNINITIALIZED
+                  00001178    00000100     --HOLE--
+
+.cinit     0    00001278    00000038     
+                  00001278    0000000f     (.cinit..data.load) [load image, compression = rle]
+                  00001287    00000001     --HOLE-- [fill = 0]
+                  00001288    0000000c     (__TI_handler_table)
+                  00001294    00000004     --HOLE-- [fill = 0]
+                  00001298    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000012a0    00000010     (__TI_cinit_table)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000012a0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00001278, load size=0000000f bytes, run addr=00001164, run size=00000014 bytes, compression=rle
+	.bss: load addr=00001298, load size=00000008 bytes, run addr=00001110, run size=00000054 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001288 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000e4d   C$$EXIT
+00000e91   ClrScreen
+00000f79   GPIODirModeSet
+0000102f   GPIOIntDisable
+0000104b   GPIOIntEnable
+00000397   GPIOPadConfigSet
+UNDEFED    GrContextFontSet
+UNDEFED    GrContextInit
+UNDEFED    GrImageDraw
+UNDEFED    GrRectDraw
+UNDEFED    GrRectFill
+UNDEFED    GrStringDraw
+00000fdd   LCDBP320x240x16_SSD1289ColorTranslate
+00000021   LCDBP320x240x16_SSD1289Init
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+00000711   SysCtlClockGet
+00000829   SysCtlClockSet
+00001071   SysCtlDelay
+00000f45   SysCtlPeripheralEnable
+000009e1   WriteCommand
+00000aa1   WriteData
+00000ff3   WriteDataSec
+00001278   __STACK_END
+00000100   __STACK_SIZE
+000012a0   __TI_CINIT_Base
+000012b0   __TI_CINIT_Limit
+00001288   __TI_Handler_Table_Base
+00001294   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+00000bed   __TI_auto_init
+0000116c   __TI_cleanup_ptr
+0000103d   __TI_decompress_none
+00001077   __TI_decompress_rle24
+00001170   __TI_dtors_ptr
+00001278   __TI_static_base__
+0000101d   __TI_zero_init
+00000b51   __aeabi_memcpy
+00000b51   __aeabi_memcpy4
+00000b51   __aeabi_memcpy8
+00000fa3   __aeabi_ui2d
+ffffffff   __binit__
+ffffffff   __c_args__
+00001178   __stack
+00000fc5   _args_main
+00000d79   _c_int00
+00001164   _lock
+00001017   _nop
+0000100f   _register_lock
+00001009   _register_unlock
+00001168   _unlock
+00000e51   abort
+ffffffff   binit
+00000e09   copy_in
+00001059   disableINT
+00001065   enableINT
+00000e59   exit
+UNDEFED    g_pui8Image
+UNDEFED    g_sFontCmss30b
+000010e8   g_sLCDBP320x240x16_SSD1289
+000001e5   init0
+00000dc1   initpower
+000004c9   main
+00001174   main_func_sp
+00000b51   memcpy
+00001140   midelay
+00001148   midelayns
+00001150   midelaynsr
+00001110   sContext
+00001158   sRect
+0000113c   ulClockMS
+00001160   ulClockMS3
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00000021   LCDBP320x240x16_SSD1289Init
+00000100   __STACK_SIZE
+000001e5   init0
+00000397   GPIOPadConfigSet
+000004c9   main
+00000711   SysCtlClockGet
+00000829   SysCtlClockSet
+000009e1   WriteCommand
+00000aa1   WriteData
+00000b51   __aeabi_memcpy
+00000b51   __aeabi_memcpy4
+00000b51   __aeabi_memcpy8
+00000b51   memcpy
+00000bed   __TI_auto_init
+00000d79   _c_int00
+00000dc1   initpower
+00000e09   copy_in
+00000e4d   C$$EXIT
+00000e51   abort
+00000e59   exit
+00000e91   ClrScreen
+00000f45   SysCtlPeripheralEnable
+00000f79   GPIODirModeSet
+00000fa3   __aeabi_ui2d
+00000fc5   _args_main
+00000fdd   LCDBP320x240x16_SSD1289ColorTranslate
+00000ff3   WriteDataSec
+00001009   _register_unlock
+0000100f   _register_lock
+00001017   _nop
+0000101d   __TI_zero_init
+0000102f   GPIOIntDisable
+0000103d   __TI_decompress_none
+0000104b   GPIOIntEnable
+00001059   disableINT
+00001065   enableINT
+00001071   SysCtlDelay
+00001077   __TI_decompress_rle24
+000010e8   g_sLCDBP320x240x16_SSD1289
+00001110   sContext
+0000113c   ulClockMS
+00001140   midelay
+00001148   midelayns
+00001150   midelaynsr
+00001158   sRect
+00001160   ulClockMS3
+00001164   _lock
+00001168   _unlock
+0000116c   __TI_cleanup_ptr
+00001170   __TI_dtors_ptr
+00001174   main_func_sp
+00001178   __stack
+00001278   __STACK_END
+00001278   __TI_static_base__
+00001288   __TI_Handler_Table_Base
+00001294   __TI_Handler_Table_Limit
+000012a0   __TI_CINIT_Base
+000012b0   __TI_CINIT_Limit
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    GrContextFontSet
+UNDEFED    GrContextInit
+UNDEFED    GrImageDraw
+UNDEFED    GrRectDraw
+UNDEFED    GrRectFill
+UNDEFED    GrStringDraw
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+UNDEFED    g_pui8Image
+UNDEFED    g_sFontCmss30b
+
+[72 symbols]

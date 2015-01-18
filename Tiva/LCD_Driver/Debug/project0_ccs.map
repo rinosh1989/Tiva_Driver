@@ -1,0 +1,618 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.6                      
+******************************************************************************
+>> Linked Sun Jan 04 21:55:25 2015
+
+OUTPUT FILE NAME:   <LCDBPV2.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000b93d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  0000c21a  00033de6  R  X
+  SRAM                  20000000   00008000  00000cbc  00007344  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    0000c220   0000c220    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00008ec4   00008ec4    r-- .const
+  00009130    00009130    0000301a   0000301a    r-x .text
+  0000c150    0000c150    000000d0   000000d0    r-- .cinit
+20000000    20000000    00000cbc   00000000    rw-
+  20000000    20000000    000007a8   00000000    rw- .bss
+  200007a8    200007a8    00000400   00000000    rw- .stack
+  20000ba8    20000ba8    00000114   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.const     0    0000026c    00008ec4     
+                  0000026c    00005d82     pic.obj (.const:.string:g_pui8Image)
+                  00005fee    00000002     --HOLE-- [fill = 0]
+                  00005ff0    00000d2c     grlib.lib : fontcm30b.obj (.const:.string:g_pui8Cm30bData)
+                  00006d1c    00000cb4               : fontcmss30b.obj (.const:.string:g_pui8Cmss30bData)
+                  000079d0    0000095e               : fontcm20.obj (.const:.string:g_pui8Cm20Data)
+                  0000832e    00000002     --HOLE-- [fill = 0]
+                  00008330    0000091e               : fontcmss22b.obj (.const:.string:g_pui8Cmss22bData)
+                  00008c4e    00000002     --HOLE-- [fill = 0]
+                  00008c50    000000c8               : fontcm20.obj (.const:g_sFontCm20)
+                  00008d18    000000c8               : fontcm30b.obj (.const:g_sFontCm30b)
+                  00008de0    000000c8               : fontcmss22b.obj (.const:g_sFontCmss22b)
+                  00008ea8    000000c8               : fontcmss30b.obj (.const:g_sFontCmss30b)
+                  00008f70    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00009000    00000070                   : interrupt.obj (.const)
+                  00009070    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  000090dc    00000028     LCDBP320x240x16_SSD1289.obj (.const:g_sLCDBP320x240x16_SSD1289)
+                  00009104    0000001c     lcdbpv2.obj (.const:.string)
+                  00009120    00000010     grlib.lib : context.obj (.const)
+
+.text      0    00009130    0000301a     
+                  00009130    0000038c     grlib.lib : image.obj (.text:InternalImageDraw)
+                  000094bc    00000374     lcdbpv2.obj (.text:main)
+                  00009830    000002ce     grlib.lib : image.obj (.text:PixelTransparentDraw)
+                  00009afe    00000266               : string.obj (.text:GrFontGlyphRender)
+                  00009d64    000001c4     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289Init)
+                  00009f28    000001b2     LCDBP320x240x16_SSD1289.obj (.text:init0)
+                  0000a0da    00000188     grlib.lib : canvas.obj (.text:CanvasPaint)
+                  0000a262    0000016e               : pushbutton.obj (.text:RectangularButtonPaint)
+                  0000a3d0    00000130     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  0000a500    0000011c     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289PixelDrawMultiple)
+                  0000a61c    0000011c     LCDBPV2_touch.obj (.text:gettouch)
+                  0000a738    00000118     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  0000a850    000000f0     LCDBPV2_backlight.obj (.text:ConfigBK_I2C)
+                  0000a940    000000f0     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  0000aa30    000000f0     grlib.lib : widget.obj (.text:WidgetMessageQueueAdd)
+                  0000ab20    000000f0     LCDBP320x240x16_SSD1289.obj (.text:init1)
+                  0000ac10    000000ec     grlib.lib : pushbutton.obj (.text:RectangularButtonClick)
+                  0000acfc    000000ca               : string.obj (.text:GrDefaultStringRenderer)
+                  0000adc6    000000c0     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289RectFill)
+                  0000ae86    00000002     startup_ccs.obj (.text:FaultISR)
+                  0000ae88    000000b4     LCDBPV2_touch.obj (.text:touchprocess)
+                  0000af3c    000000b0     grlib.lib : widget.obj (.text:WidgetMessageSendPostOrder)
+                  0000afec    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  0000b088    00000094     LCDBPV2_touch.obj (.text:LCDBPV2_touch_receiveI2C)
+                  0000b11c    00000094     rtsv7M4_T_le_v4SPD16_eabi.lib : auto_init.obj (.text)
+                  0000b1b0    00000086     grlib.lib : rectangle.obj (.text:GrRectFill)
+                  0000b236    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  0000b238    00000070     LCDBPV2_touch.obj (.text:LCDBPV2_touch_Init)
+                  0000b2a8    00000070     LCDBPV2_touch.obj (.text:touch_IntHandler)
+                  0000b318    0000006c     LCDBPV2_touch.obj (.text:LCDBPV2_calcParam)
+                  0000b384    0000006a     grlib.lib : string.obj (.text:GrStringWidthGet)
+                  0000b3ee    00000002     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289Flush)
+                  0000b3f0    00000068     LCDBP320x240x16_SSD1289.obj (.text:EnableHIGH)
+                  0000b458    00000066     grlib.lib : rectangle.obj (.text:GrRectDraw)
+                  0000b4be    00000002     startup_ccs.obj (.text:NmiSR)
+                  0000b4c0    00000064     grlib.lib : context.obj (.text:GrContextInit)
+                  0000b524    00000064               : widget.obj (.text:WidgetMessageQueueProcess)
+                  0000b588    00000062               : context.obj (.text:GrContextClipRegionSet)
+                  0000b5ea    00000002     --HOLE-- [fill = 0]
+                  0000b5ec    00000060     driverlib.lib : interrupt.obj (.text:IntEnable)
+                  0000b64c    0000005e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
+                  0000b6aa    0000005c     grlib.lib : string.obj (.text:FontWideGlyphDataGet)
+                  0000b706    00000002     --HOLE-- [fill = 0]
+                  0000b708    0000005c     driverlib.lib : timer.obj (.text:TimerConfigure)
+                  0000b764    00000056                   : gpio.obj (.text:GPIOIntTypeSet)
+                  0000b7ba    00000056     grlib.lib : widget.obj (.text:WidgetMessageSendPreOrder)
+                  0000b810    00000050     LCDBPV2_touch.obj (.text:LCDBPV2_loadparm)
+                  0000b860    0000004a     grlib.lib : string.obj (.text:UpdateContextCharMapping)
+                  0000b8aa    00000002     --HOLE-- [fill = 0]
+                  0000b8ac    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  0000b8f4    00000048                   : i2c.obj (.text:I2CMasterInitExpClk)
+                  0000b93c    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  0000b984    00000046     grlib.lib : line.obj (.text:GrLineDrawH)
+                  0000b9ca    00000046               : line.obj (.text:GrLineDrawV)
+                  0000ba10    00000046     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289LineDrawH)
+                  0000ba56    00000046     LCDBP320x240x16_SSD1289.obj (.text:initpower)
+                  0000ba9c    00000044     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289LineDrawV)
+                  0000bae0    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  0000bb24    00000044                                   : exit.obj (.text)
+                  0000bb68    00000040     lcdbpv2.obj (.text:ClrScreen)
+                  0000bba8    0000003c     LCDBP320x240x16_SSD1289.obj (.text:WriteDataSec)
+                  0000bbe4    0000003a     grlib.lib : string.obj (.text:FontGlyphDataGet)
+                  0000bc1e    00000002     --HOLE-- [fill = 0]
+                  0000bc20    00000038     LCDBP320x240x16_SSD1289.obj (.text:WriteCommand)
+                  0000bc58    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  0000bc8c    00000034     LCDBP320x240x16_SSD1289.obj (.text:WriteData)
+                  0000bcc0    00000032     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289PixelDraw)
+                  0000bcf2    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  0000bd1c    0000002a     grlib.lib : string.obj (.text:GrFontBaselineGet)
+                  0000bd46    0000002a               : string.obj (.text:GrFontHeightGet)
+                  0000bd70    0000002a               : string.obj (.text:GrStringNextCharGet)
+                  0000bd9a    0000002a               : widget.obj (.text:WidgetIsInTree)
+                  0000bdc4    00000026               : string.obj (.text:GrFontInfoGet)
+                  0000bdea    00000002     --HOLE-- [fill = 0]
+                  0000bdec    00000024     lcdbpv2.obj (.text:OnButtonPress)
+                  0000be10    00000024     grlib.lib : widget.obj (.text:WidgetAdd)
+                  0000be34    00000022               : string.obj (.text:GrFontGlyphDataGet)
+                  0000be56    00000022               : pushbutton.obj (.text:RectangularButtonMsgProc)
+                  0000be78    00000020     LCDBPV2_touch.obj (.text:WaitI2CDone)
+                  0000be98    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.obj (.text)
+                  0000beb8    0000001e     grlib.lib : string.obj (.text:GrFontCodepageGet)
+                  0000bed6    00000002     --HOLE-- [fill = 0]
+                  0000bed8    0000001c     LCDBPV2_backlight.obj (.text:WaitI2CDone)
+                  0000bef4    0000001c     grlib.lib : widget.obj (.text:WidgetPointerMessage)
+                  0000bf10    00000018     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  0000bf28    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  0000bf40    00000016     driverlib.lib : i2c.obj (.text:I2CMasterErr)
+                  0000bf56    00000016     LCDBP320x240x16_SSD1289.obj (.text:LCDBP320x240x16_SSD1289ColorTranslate)
+                  0000bf6c    00000014     grlib.lib : canvas.obj (.text:CanvasMsgProc)
+                  0000bf80    00000014     lcdbpv2.obj (.text:Timer0IntHandler)
+                  0000bf94    00000014     grlib.lib : widget.obj (.text:WidgetMutexGet)
+                  0000bfa8    00000014     LCDBP320x240x16_SSD1289.obj (.text:WriteHIGH)
+                  0000bfbc    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  0000bfd0    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  0000bfe2    00000012                   : gpio.obj (.text:GPIOPinTypeI2C)
+                  0000bff4    00000012                   : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  0000c006    00000012     grlib.lib : string.obj (.text:GrStringDraw)
+                  0000c018    00000012     driverlib.lib : timer.obj (.text:TimerLoadSet)
+                  0000c02a    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  0000c03c    00000010     driverlib.lib : fpu.obj (.text:FPUEnable)
+                  0000c04c    00000010                   : fpu.obj (.text:FPULazyStackingEnable)
+                  0000c05c    00000010                   : udma.obj (.text:uDMAEnable)
+                  0000c06c    0000000e                   : gpio.obj (.text:GPIOIntDisable)
+                  0000c07a    0000000e     grlib.lib : image.obj (.text:GrImageDraw)
+                  0000c088    0000000e     driverlib.lib : timer.obj (.text:TimerEnable)
+                  0000c096    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000c0a4    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
+                  0000c0b0    0000000c                   : gpio.obj (.text:GPIOIntEnable)
+                  0000c0bc    0000000c                   : udma.obj (.text:uDMAControlBaseSet)
+                  0000c0c8    0000000a                   : i2c.obj (.text:I2CMasterEnable)
+                  0000c0d2    0000000a                   : interrupt.obj (.text:IntMasterEnable)
+                  0000c0dc    0000000a                   : timer.obj (.text:TimerIntDisable)
+                  0000c0e6    00000008     grlib.lib : charmap.obj (.text:GrMapISO8859_1_Unicode)
+                  0000c0ee    00000008     driverlib.lib : i2c.obj (.text:I2CMasterBusy)
+                  0000c0f6    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  0000c0fe    00000008                   : timer.obj (.text:TimerIntEnable)
+                  0000c106    00000006                   : gpio.obj (.text:GPIOIntClear)
+                  0000c10c    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  0000c112    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  0000c118    00000006     grlib.lib : string.obj (.text:GrContextFontSet)
+                  0000c11e    00000006     startup_ccs.obj (.text:ResetISR)
+                  0000c124    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  0000c12a    00000006     grlib.lib : widget.obj (.text:WidgetMutexPut)
+                  0000c130    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  0000c136    00000004     driverlib.lib : i2c.obj (.text:I2CMasterControl)
+                  0000c13a    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  0000c13e    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  0000c142    00000004                   : timer.obj (.text:TimerIntClear)
+                  0000c146    00000004     grlib.lib : widget.obj (.text:WidgetDefaultMsgProc)
+
+.cinit     0    0000c150    000000d0     
+                  0000c150    000000a7     (.cinit..data.load) [load image, compression = rle]
+                  0000c1f7    00000001     --HOLE-- [fill = 0]
+                  0000c1f8    0000000c     (__TI_handler_table)
+                  0000c204    00000004     --HOLE-- [fill = 0]
+                  0000c208    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000c210    00000010     (__TI_cinit_table)
+
+.bss       0    20000000    000007a8     UNINITIALIZED
+                  20000000    00000400     lcdbpv2.obj (.bss:sDMAControlTable)
+                  20000400    00000190     LCDBPV2_touch.obj (.bss:touchevents)
+                  20000590    00000140     grlib.lib : widget.obj (.bss:g_psMQ)
+                  200006d0    0000002c     lcdbpv2.obj (.bss:sContext)
+                  200006fc    00000020     grlib.lib : image.obj (.bss)
+                  2000071c    0000001c     (.common:tempparm)
+                  20000738    00000008     (.common:midelay)
+                  20000740    00000008     (.common:midelayns)
+                  20000748    00000008     (.common:midelaynsr)
+                  20000750    00000008     (.common:sRect)
+                  20000758    00000004               : context.obj (.bss)
+                  2000075c    00000004     (.common:I2Cwd)
+                  20000760    00000004     (.common:flcal)
+                  20000764    00000004     (.common:flcc)
+                  20000768    00000004     (.common:fldown)
+                  2000076c    00000004     (.common:g_plParmSet)
+                  20000770    00000004     (.common:lock)
+                  20000774    00000004     (.common:tRtouch)
+                  20000778    00000004     (.common:tX)
+                  2000077c    00000004     (.common:tXc)
+                  20000780    00000004     (.common:tY)
+                  20000784    00000004     (.common:tYc)
+                  20000788    00000004     (.common:tZ1)
+                  2000078c    00000004     (.common:tZ2)
+                  20000790    00000004     (.common:tevents)
+                  20000794    00000004     (.common:touchstate)
+                  20000798    00000004     (.common:ulClockMS)
+                  2000079c    00000004     (.common:ulClockMS3)
+                  200007a0    00000004     (.common:xbk)
+                  200007a4    00000004     (.common:ybk)
+
+.stack     0    200007a8    00000400     UNINITIALIZED
+                  200007a8    00000400     --HOLE--
+
+.data      0    20000ba8    00000114     UNINITIALIZED
+                  20000ba8    00000050     lcdbpv2.obj (.data:g_sPushBtn)
+                  20000bf8    00000040     lcdbpv2.obj (.data:g_sBackground)
+                  20000c38    00000040     lcdbpv2.obj (.data:g_sHeading)
+                  20000c78    0000002d     grlib.lib : widget.obj (.data)
+                  20000ca5    00000001     lcdbpv2.obj (.data)
+                  20000ca6    00000002     --HOLE--
+                  20000ca8    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000cb0    00000008                                   : exit.obj (.data)
+                  20000cb8    00000004                                   : stkdepth_vars.obj (.data)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000c210 records: 2, size/record: 8, table size: 16
+	.data: load addr=0000c150, load size=000000a7 bytes, run addr=20000ba8, run size=00000114 bytes, compression=rle
+	.bss: load addr=0000c208, load size=00000008 bytes, run addr=20000000, run size=000007a8 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000c1f8 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+0000bb25   C$$EXIT
+0000c0a5   CPUcpsie
+0000bf6d   CanvasMsgProc
+0000bb69   ClrScreen
+0000a851   ConfigBK_I2C
+0000b3f1   EnableHIGH
+0000c03d   FPUEnable
+0000c04d   FPULazyStackingEnable
+0000bcf3   GPIODirModeSet
+0000c107   GPIOIntClear
+0000c06d   GPIOIntDisable
+0000c0b1   GPIOIntEnable
+0000b765   GPIOIntTypeSet
+0000a3d1   GPIOPadConfigSet
+0000b8ad   GPIOPinConfigure
+0000c10d   GPIOPinRead
+0000bfd1   GPIOPinTypeGPIOInput
+0000bf11   GPIOPinTypeGPIOOutput
+0000bfe3   GPIOPinTypeI2C
+0000bff5   GPIOPinTypeI2CSCL
+0000c113   GPIOPinWrite
+0000b589   GrContextClipRegionSet
+0000c119   GrContextFontSet
+0000b4c1   GrContextInit
+0000acfd   GrDefaultStringRenderer
+0000bd1d   GrFontBaselineGet
+0000beb9   GrFontCodepageGet
+0000be35   GrFontGlyphDataGet
+00009aff   GrFontGlyphRender
+0000bd47   GrFontHeightGet
+0000bdc5   GrFontInfoGet
+0000c07b   GrImageDraw
+0000b985   GrLineDrawH
+0000b9cb   GrLineDrawV
+0000c0e7   GrMapISO8859_1_Unicode
+0000b459   GrRectDraw
+0000b1b1   GrRectFill
+0000c007   GrStringDraw
+0000bd71   GrStringNextCharGet
+0000b385   GrStringWidthGet
+0000c0ef   I2CMasterBusy
+0000c137   I2CMasterControl
+0000c13b   I2CMasterDataGet
+0000c13f   I2CMasterDataPut
+0000c0c9   I2CMasterEnable
+0000bf41   I2CMasterErr
+0000b8f5   I2CMasterInitExpClk
+0000c0f7   I2CMasterSlaveAddrSet
+2000075c   I2Cwd
+0000b5ed   IntEnable
+0000c0d3   IntMasterEnable
+0000bf57   LCDBP320x240x16_SSD1289ColorTranslate
+00009d65   LCDBP320x240x16_SSD1289Init
+0000a851   LCDBPV2_backlight_init
+0000b319   LCDBPV2_calcParam
+0000b811   LCDBPV2_loadparm
+0000b239   LCDBPV2_touch_Init
+0000b089   LCDBPV2_touch_receiveI2C
+0000bded   OnButtonPress
+0000be57   RectangularButtonMsgProc
+0000c11f   ResetISR
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+0000a739   SysCtlClockGet
+0000a941   SysCtlClockSet
+0000c125   SysCtlDelay
+0000bc59   SysCtlPeripheralEnable
+0000bf81   Timer0IntHandler
+0000b709   TimerConfigure
+0000c089   TimerEnable
+0000c143   TimerIntClear
+0000c0dd   TimerIntDisable
+0000c0ff   TimerIntEnable
+0000c019   TimerLoadSet
+0000bed9   WaitI2CDone
+0000be11   WidgetAdd
+0000c147   WidgetDefaultMsgProc
+0000aa31   WidgetMessageQueueAdd
+0000b525   WidgetMessageQueueProcess
+0000af3d   WidgetMessageSendPostOrder
+0000b7bb   WidgetMessageSendPreOrder
+0000bf95   WidgetMutexGet
+0000c12b   WidgetMutexPut
+0000bef5   WidgetPointerMessage
+0000bc21   WriteCommand
+0000bc8d   WriteData
+0000bba9   WriteDataSec
+0000bfa9   WriteHIGH
+20000ba8   __STACK_END
+00000400   __STACK_SIZE
+200008a8   __STACK_TOP
+0000c210   __TI_CINIT_Base
+0000c220   __TI_CINIT_Limit
+0000c1f8   __TI_Handler_Table_Base
+0000c204   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+0000b11d   __TI_auto_init
+20000cb0   __TI_cleanup_ptr
+0000c097   __TI_decompress_none
+0000c131   __TI_decompress_rle24
+20000cb4   __TI_dtors_ptr
+00000000   __TI_static_base__
+0000c02b   __TI_zero_init
+0000afed   __aeabi_memcpy
+0000afed   __aeabi_memcpy4
+0000afed   __aeabi_memcpy8
+0000be99   __aeabi_ui2d
+ffffffff   __binit__
+ffffffff   __c_args__
+200007a8   __stack
+0000bf29   _args_main
+0000b93d   _c_int00
+20000ca8   _lock
+0000bfcb   _nop
+0000bfc3   _register_lock
+0000bfbd   _register_unlock
+20000cac   _unlock
+0000bb29   abort
+ffffffff   binit
+0000bae1   copy_in
+0000bb31   exit
+20000760   flcal
+20000764   flcc
+20000768   fldown
+20000ca5   g_RedLedOn
+00000000   g_pfnVectors
+2000076c   g_plParmSet
+00009120   g_psDefaultCodePointMapTable
+0000026c   g_pui8Image
+20000bf8   g_sBackground
+00008c50   g_sFontCm20
+00008d18   g_sFontCm30b
+00008de0   g_sFontCmss22b
+00008ea8   g_sFontCmss30b
+20000c38   g_sHeading
+000090dc   g_sLCDBP320x240x16_SSD1289
+20000ba8   g_sPushBtn
+20000c78   g_sRoot
+0000a61d   gettouch
+00009f29   init0
+0000ab21   init1
+0000ba57   initpower
+20000770   lock
+000094bd   main
+20000cb8   main_func_sp
+0000afed   memcpy
+20000738   midelay
+20000740   midelayns
+20000748   midelaynsr
+200006d0   sContext
+20000000   sDMAControlTable
+20000750   sRect
+20000774   tRtouch
+20000778   tX
+2000077c   tXc
+20000780   tY
+20000784   tYc
+20000788   tZ1
+2000078c   tZ2
+2000071c   tempparm
+20000790   tevents
+0000b2a9   touch_IntHandler
+20000400   touchevents
+0000ae89   touchprocess
+20000794   touchstate
+0000c0bd   uDMAControlBaseSet
+0000c05d   uDMAEnable
+20000798   ulClockMS
+2000079c   ulClockMS3
+200007a0   xbk
+200007a4   ybk
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+0000026c   g_pui8Image
+00000400   __STACK_SIZE
+00008c50   g_sFontCm20
+00008d18   g_sFontCm30b
+00008de0   g_sFontCmss22b
+00008ea8   g_sFontCmss30b
+000090dc   g_sLCDBP320x240x16_SSD1289
+00009120   g_psDefaultCodePointMapTable
+000094bd   main
+00009aff   GrFontGlyphRender
+00009d65   LCDBP320x240x16_SSD1289Init
+00009f29   init0
+0000a3d1   GPIOPadConfigSet
+0000a61d   gettouch
+0000a739   SysCtlClockGet
+0000a851   ConfigBK_I2C
+0000a851   LCDBPV2_backlight_init
+0000a941   SysCtlClockSet
+0000aa31   WidgetMessageQueueAdd
+0000ab21   init1
+0000acfd   GrDefaultStringRenderer
+0000ae89   touchprocess
+0000af3d   WidgetMessageSendPostOrder
+0000afed   __aeabi_memcpy
+0000afed   __aeabi_memcpy4
+0000afed   __aeabi_memcpy8
+0000afed   memcpy
+0000b089   LCDBPV2_touch_receiveI2C
+0000b11d   __TI_auto_init
+0000b1b1   GrRectFill
+0000b239   LCDBPV2_touch_Init
+0000b2a9   touch_IntHandler
+0000b319   LCDBPV2_calcParam
+0000b385   GrStringWidthGet
+0000b3f1   EnableHIGH
+0000b459   GrRectDraw
+0000b4c1   GrContextInit
+0000b525   WidgetMessageQueueProcess
+0000b589   GrContextClipRegionSet
+0000b5ed   IntEnable
+0000b709   TimerConfigure
+0000b765   GPIOIntTypeSet
+0000b7bb   WidgetMessageSendPreOrder
+0000b811   LCDBPV2_loadparm
+0000b8ad   GPIOPinConfigure
+0000b8f5   I2CMasterInitExpClk
+0000b93d   _c_int00
+0000b985   GrLineDrawH
+0000b9cb   GrLineDrawV
+0000ba57   initpower
+0000bae1   copy_in
+0000bb25   C$$EXIT
+0000bb29   abort
+0000bb31   exit
+0000bb69   ClrScreen
+0000bba9   WriteDataSec
+0000bc21   WriteCommand
+0000bc59   SysCtlPeripheralEnable
+0000bc8d   WriteData
+0000bcf3   GPIODirModeSet
+0000bd1d   GrFontBaselineGet
+0000bd47   GrFontHeightGet
+0000bd71   GrStringNextCharGet
+0000bdc5   GrFontInfoGet
+0000bded   OnButtonPress
+0000be11   WidgetAdd
+0000be35   GrFontGlyphDataGet
+0000be57   RectangularButtonMsgProc
+0000be99   __aeabi_ui2d
+0000beb9   GrFontCodepageGet
+0000bed9   WaitI2CDone
+0000bef5   WidgetPointerMessage
+0000bf11   GPIOPinTypeGPIOOutput
+0000bf29   _args_main
+0000bf41   I2CMasterErr
+0000bf57   LCDBP320x240x16_SSD1289ColorTranslate
+0000bf6d   CanvasMsgProc
+0000bf81   Timer0IntHandler
+0000bf95   WidgetMutexGet
+0000bfa9   WriteHIGH
+0000bfbd   _register_unlock
+0000bfc3   _register_lock
+0000bfcb   _nop
+0000bfd1   GPIOPinTypeGPIOInput
+0000bfe3   GPIOPinTypeI2C
+0000bff5   GPIOPinTypeI2CSCL
+0000c007   GrStringDraw
+0000c019   TimerLoadSet
+0000c02b   __TI_zero_init
+0000c03d   FPUEnable
+0000c04d   FPULazyStackingEnable
+0000c05d   uDMAEnable
+0000c06d   GPIOIntDisable
+0000c07b   GrImageDraw
+0000c089   TimerEnable
+0000c097   __TI_decompress_none
+0000c0a5   CPUcpsie
+0000c0b1   GPIOIntEnable
+0000c0bd   uDMAControlBaseSet
+0000c0c9   I2CMasterEnable
+0000c0d3   IntMasterEnable
+0000c0dd   TimerIntDisable
+0000c0e7   GrMapISO8859_1_Unicode
+0000c0ef   I2CMasterBusy
+0000c0f7   I2CMasterSlaveAddrSet
+0000c0ff   TimerIntEnable
+0000c107   GPIOIntClear
+0000c10d   GPIOPinRead
+0000c113   GPIOPinWrite
+0000c119   GrContextFontSet
+0000c11f   ResetISR
+0000c125   SysCtlDelay
+0000c12b   WidgetMutexPut
+0000c131   __TI_decompress_rle24
+0000c137   I2CMasterControl
+0000c13b   I2CMasterDataGet
+0000c13f   I2CMasterDataPut
+0000c143   TimerIntClear
+0000c147   WidgetDefaultMsgProc
+0000c1f8   __TI_Handler_Table_Base
+0000c204   __TI_Handler_Table_Limit
+0000c210   __TI_CINIT_Base
+0000c220   __TI_CINIT_Limit
+20000000   sDMAControlTable
+20000400   touchevents
+200006d0   sContext
+2000071c   tempparm
+20000738   midelay
+20000740   midelayns
+20000748   midelaynsr
+20000750   sRect
+2000075c   I2Cwd
+20000760   flcal
+20000764   flcc
+20000768   fldown
+2000076c   g_plParmSet
+20000770   lock
+20000774   tRtouch
+20000778   tX
+2000077c   tXc
+20000780   tY
+20000784   tYc
+20000788   tZ1
+2000078c   tZ2
+20000790   tevents
+20000794   touchstate
+20000798   ulClockMS
+2000079c   ulClockMS3
+200007a0   xbk
+200007a4   ybk
+200007a8   __stack
+200008a8   __STACK_TOP
+20000ba8   __STACK_END
+20000ba8   g_sPushBtn
+20000bf8   g_sBackground
+20000c38   g_sHeading
+20000c78   g_sRoot
+20000ca5   g_RedLedOn
+20000ca8   _lock
+20000cac   _unlock
+20000cb0   __TI_cleanup_ptr
+20000cb4   __TI_dtors_ptr
+20000cb8   main_func_sp
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[171 symbols]
