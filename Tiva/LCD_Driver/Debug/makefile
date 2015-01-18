@@ -30,7 +30,7 @@ all: LCD_Driver.elf
 LCD_Driver.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross GCC Linker'
-	arm-none-eabi-gcc -L/home/paul/Documents/Project/tivaware/driverlib/gcc -Wl,--static,--gc-sections,-T../startup_src/TM4C.ld -mthumb -mcpu=cortex-m4 -o "LCD_Driver.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -L/home/paul/Documents/Project/tivaware/driverlib/gcc -L/home/paul/Documents/Project/tivaware/grlib/gcc -Wl,--static,--gc-sections,-T../startup_src/TM4C.ld -mthumb -mcpu=cortex-m4 -o "LCD_Driver.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
