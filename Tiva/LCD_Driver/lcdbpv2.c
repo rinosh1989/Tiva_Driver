@@ -147,7 +147,8 @@ main(void)
 
     // ******Enable I2C
 
-
+    /*
+     * I2C Not on correct PIN
     GPIOPinTypeI2CSCL(GPIO_PORTE_BASE, GPIO_PIN_4); //  special I2CSCL treatment for M4F devices
     GPIOPinTypeI2C(GPIO_PORTE_BASE, GPIO_PIN_5);
     GPIOPinConfigure(GPIO_PE4_I2C2SCL);
@@ -155,7 +156,7 @@ main(void)
     SysCtlPeripheralEnable( SYSCTL_PERIPH_I2C2);
     I2CMasterInitExpClk( I2C2_MASTER_BASE, SysCtlClockGet(), false);
     SysCtlDelay(100);
-
+	*/
     // enable led pins
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
     GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, 0x00);
